@@ -9,16 +9,16 @@ interface ServicesProps {
 const ServiceCard: React.FC<{ service: ServiceDetail, onClick: () => void }> = ({ service, onClick }) => (
   <div 
     onClick={onClick}
-    className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer group"
+    className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer group"
   >
-    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+    <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
       {service.icon}
     </div>
-    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-    <p className="text-slate-500 leading-relaxed text-sm mb-4">
+    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{service.title}</h3>
+    <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm mb-4">
       {service.description}
     </p>
-    <div className="flex items-center text-blue-600 font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+    <div className="flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
       Xem chi tiết
       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -62,11 +62,11 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-white relative overflow-hidden">
+    <section id="services" className="py-24 px-6 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Tài liệu học tập</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Tài liệu học tập</h2>
+          <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Khám phá kho tài liệu phong phú giúp bạn chinh phục mọi môn học một cách hiệu quả nhất.
           </p>
         </div>
@@ -81,7 +81,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
           ))}
         </div>
       </div>
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-50 dark:bg-blue-900/10 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };

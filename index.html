@@ -7,16 +7,23 @@
     <title>mt</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-        }
-        .bg-soft-blue { background-color: #f0f7ff; }
-        .text-navy { color: #1e293b; }
-        .bg-navy { background-color: #1e293b; }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -35,7 +42,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-white text-slate-900">
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>
