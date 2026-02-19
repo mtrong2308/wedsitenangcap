@@ -159,8 +159,46 @@ const App: React.FC = () => {
           <About currentUser={currentUser} onLogout={handleLogout} />
         </div>
         <div id="apartments">
-          <Apartments />
-        </div>
+  <Apartments />
+</div>
+
+{/* ================= ESP32 CONTROL ================= */}
+<div className="text-center py-16">
+  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
+    Điều khiển đèn ESP32
+  </h2>
+
+  <div className="flex justify-center gap-6 flex-wrap">
+    <button
+      onClick={async () => {
+        try {
+          await fetch("https://minhtrong.id.vn/led.php?set=on");
+          alert("Đèn đã bật");
+        } catch {
+          alert("Không gửi được lệnh!");
+        }
+      }}
+      className="bg-green-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg"
+    >
+      Bật đèn
+    </button>
+
+    <button
+      onClick={async () => {
+        try {
+          await fetch("https://minhtrong.id.vn/led.php?set=off");
+          alert("Đèn đã tắt");
+        } catch {
+          alert("Không gửi được lệnh!");
+        }
+      }}
+      className="bg-red-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-red-700 transition shadow-lg"
+    >
+      Tắt đèn
+    </button>
+  </div>
+</div>
+{/* ================================================= */}
       </main>
       <Footer />
 
